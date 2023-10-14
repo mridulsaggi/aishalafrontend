@@ -64,23 +64,23 @@ const Main = () => {
 
       <div class="cont_members">
         <div class="icon">
-          <img src="Images/icons/consultant.png" alt="img" />
+          <img src="./Images/icons/consultant.png" alt="img" />
           <h2 class="counter">15000+</h2>
           <p class="icon_text">Quora members</p>
         </div>
 
         <div class="icon">
-          <img src="Images/icons/open-book.png" alt="img" />
+          <img src="./Images/icons/open-book.png" alt="img" />
           <h2 class="counter">2000+</h2>
           <p class="icon_text">Students attended lectures</p>
         </div>
         <div class="icon">
-          <img src="Images/icons/community.png" alt="img" />
+          <img src="./Images/icons/community.png" alt="img" />
           <h2 class="counter">2700+</h2>
           <p class="icon_text">Community members</p>
         </div>
         <div class="icon">
-          <img src="Images/icons/graduation-cap.png" alt="img" />
+          <img src="./Images/icons/graduation-cap.png" alt="img" />
           <h2 class="counter">20+</h2>
           <p class="icon_text">Expert Mentors</p>
         </div>

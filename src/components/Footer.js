@@ -17,20 +17,20 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <div class="follow_links">
             <a href="https://www.youtube.com/channel/UCU9UeFcjp_2Oou2f-AyMScw">
-              <i class="fa fa-youtube-play"></i>
+              <i class="fa fa-youtube-play" style={{ color: "#fff" }}></i>
             </a>
             <a href="https://thinkai.quora.com/">
-              <i class="fa fa-quora"></i>
+              <i class="fa fa-quora" style={{ color: "#fff" }}></i>
             </a>
             <a href="https://chat.whatsapp.com/KQVQYvlziNO43OFOFDuRxK">
-              <i class="fa fa-whatsapp"></i>
+              <i class="fa fa-whatsapp" style={{ color: "#fff" }}></i>
             </a>
             {/* <!-- <a href="https://t.me/think_ai"><i class="fa fa-telegram" style="color:#fff ;"></i></a> --> */}
             <a href="https://www.instagram.com/thinkml_ai/">
-              <i class="fa fa-instagram"></i>
+              <i class="fa fa-instagram" style={{ color: "#fff" }}></i>
             </a>
             <a href="https://www.linkedin.com/company/ai-shala/">
-              <i class="fa fa-linkedin"></i>
+              <i class="fa fa-linkedin" style={{ color: "#fff" }}></i>
             </a>
           </div>
         </div>
@@ -68,15 +68,15 @@ const Footer = () => {
         <div class="contact_flex">
           <div class="contact_item">
             {/* <!-- <i class="material-icons" style="color: #fff;">call</i> --> */}
-            <i class="fa fa-phone"></i>
+            <i class="fa fa-phone" style={{ color: "#fff" }}></i>
             <h5>+91 9625 99 4840</h5>
           </div>
-          <div class="contact_item">
+          <div class="contact_item" style={{ color: "#fff" }}>
             <i class="fa fa-envelope"></i>
             <h5>info@ai-shala.com</h5>
           </div>
           <div class="contact_item">
-            <i class="fa fa-map-marker"></i>
+            <i class="fa fa-map-marker" style={{ color: "#fff" }}></i>
             <h5>
               C-25B, Bhagwati Garden (Extn), Uttam Nagar, New Delhi-110059,
               India
