@@ -59,7 +59,7 @@ const Main = () => {
             looking for career in <span>MACHINE LEARNING?</span>
           </h1>
         </div>
-        <img class="brain" src="./brain.png" alt="img" />
+        <img class="brain" src="./Images/brain.png" alt="img" />
       </div>
 
       <div class="cont_members">
