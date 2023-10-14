@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #F7F7F7;
+}
+
+.left,
+.right {
+    width: 40%;
+    height: 75vh;
+    /* margin: 2rem; */
+    padding: 2rem;
+    border-radius: .1rem solid white;
+    background-color: #fff;
+}
+.toggle{
+    
+    width: 100%;
+    display: flex;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.left h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.toggle button {
+    border: none;
+    width: 200px;
+    height: 30px;
+    font-size: 1rem;
+    background-color: transparent;
+    border-radius: 25px;
+
+}
+
+.toggle button.activeBtn {
+    border-bottom: 5px solid #13c7e6;
+
+}
+
+.left form {
+    display: flex;
+    margin-left: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.left form .form-comp {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    /* gap: .2rem; */
+}
+
+.left form label {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: .6vw;
+
+}
+
+.left form input {
+    width:80%;
+    padding: .6vw;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.left form input:focus {
+    outline: none;
+    border-bottom: solid #13c7e6 2px;
+}
+
+.left form input::placeholder {
+    font-size: .8rem;
+}
+
+.btn {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    padding: .6rem 2.4rem;
+    background-color: #13c7e6;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+
+
+    /* padding: 1.1rem 2.1rem; */
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #13c7e6;
+    color: black;
+}
+
+
+.btn:focus {
+    color: #fff;
+    /* border: 1px solid #01265B; */
+    background-color: #13c7e6;
+
+}
+
+.right {
+    background-color: #01265B;
+}
