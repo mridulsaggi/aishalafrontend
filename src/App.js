@@ -1,5 +1,5 @@
 function App() {
-  return "hello aishala";
+  return "hello aishal";
 }
 
 export default App;
