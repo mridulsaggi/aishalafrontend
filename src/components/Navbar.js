@@ -1,11 +1,17 @@
 import React from "react";
 // import logo from "../Images/logo/footer-logo.png"
 import "../style/style.css";
+
 import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
-    <div>
-      <header id="home" class="header">
+    <>
+      <div className="signBtn">
+        <Link to="/login">
+          <button>Login</button>
+        </Link>
+      </div>
+      <header id="home" className="headerContainer">
         <Link to="/">
           <img
             class="logo"
@@ -55,7 +61,7 @@ const Navbar = () => {
           <ion-icon name="close-outline" class="mobile_nav_icon"></ion-icon>
         </div>
       </header>
-    </div>
+    </>
   );
 };
 

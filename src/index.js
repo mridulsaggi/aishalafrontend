@@ -1,14 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from './App';
 import Navbar from "./components/Navbar";
-// import Front_content from './components/Python';
 import "./style/style.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Main from "./components/Home/Main";
 import Footer from "./components/Footer";
-// import Partners from './components/Home/Partners';
-// import Super10batch from './components/Home/Super10batch';
 import Home from "./components/Home/Home";
 import Super10 from "./components/Super-10/Super10";
 import Page from "./components/post/discuss/Page";
