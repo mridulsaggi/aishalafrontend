@@ -18,6 +18,7 @@ import Logout from './login/pages/logout';
 import { Context } from './index.js'
 
 function App() {
+<<<<<<< HEAD
   const { isauthenticated, setisauthenticated} = useContext(Context);
 
   return (
@@ -38,6 +39,9 @@ function App() {
    </Router>
     </>
   );
+=======
+  return "hello aishal";
+>>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd
 }
 
 export default App;
