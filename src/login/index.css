@@ -7,6 +7,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
+
 .login {
     width: 100vw;
     height: 100vh;
@@ -26,11 +28,13 @@
     border-radius: .1rem solid white;
     background-color: #fff;
 }
-.toggle{
-    
+
+.toggle {
+
     width: 100%;
     display: flex;
 }
+
 .left {
     display: flex;
     flex-direction: column;
@@ -83,7 +87,7 @@
 }
 
 .left form input {
-    width:80%;
+    width: 80%;
     padding: .6vw;
     font-size: 1rem;
     border: none;
