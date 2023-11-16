@@ -1,8 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState ,useContext} from "react";
 import { toast } from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 import "../../login/index.css"
+import { Context } from '../../index.js'
+
 // const Register = () => {
 //   const toggle = () => {
 //     setstate(!state);
@@ -187,6 +189,8 @@ const Register = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [secretkey, setsecretkey] = useState("");
+  const { isauthenticated, setisauthenticated} = useContext(Context); //global variables
+
 
   const toggle = () => {
     setstate(!state);
@@ -196,7 +200,8 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://updated-3380.onrender.com/studentregister",
+        
+        "http://localhost:3001/studentregister",
         { name, email, password },
         {
           headers: {
@@ -211,17 +216,21 @@ const Register = () => {
         setemail("");
         setpassword("");
         console.log(data.message);
+        setisauthenticated(true);
         setisauth(true);
       } else {
         toast.error(data.message);
         setpassword("");
         setemail("");
         console.log(data.message);
-        setisauth(false);
+        setisauthenticated(false);        
+        setisauth(false);        
+
       }
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);
+      setisauthenticated(false);
       setisauth(false);
     }
   };
@@ -230,7 +239,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://updated-3380.onrender.com/teacherregister",
+        "http://localhost:3001/teacherregister",
         { name, email, password, secretkey },
         {
           headers: {
@@ -248,6 +257,7 @@ const Register = () => {
         setemail("");
         setsecretkey("");
         setpassword("");
+        setisauthenticated(true);
         setisauth(true);
       } else {
         toast.error(data.message);
@@ -255,6 +265,7 @@ const Register = () => {
         // setemail("");
         setsecretkey("");
         console.log(data.message);
+        setisauthenticated(false);
         setisauth(false);
       }
 
@@ -279,14 +290,15 @@ const Register = () => {
       //     setisauth(false);
       //   }
     } catch (error) {
-      toast.error(error.response.data.message);
+      // toast.error(error.response.data.message);
       console.log(error);
       setisauth(false);
+      setisauthenticated(false);
     }
   };
-  if (isauth) {
+  if (isauthenticated) {
     console.log(isauth);
-    return <Navigate to={"/home"} />;
+    return <Navigate to={"/page"} />;
   }
 
   return (

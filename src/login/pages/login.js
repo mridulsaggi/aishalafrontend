@@ -1,9 +1,10 @@
 import axios from "axios";
 
-import React from "react";
+import {React,useContext} from "react";
 import "../../login/index.css"
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import { Context } from '../../index.js'
 // import { Navigate } from "react-router-dom";
 
 // const Login = () => {
@@ -156,6 +157,8 @@ const Login = () => {
   const [isauth, setisauth] = useState(false);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const { isauthenticated, setisauthenticated} = useContext(Context); //global variables
+
 
   // TOGGLE FUNCTION FOR CHOOSING BETWEEN LOGIN AS STUDENT AND LOGIN AS TEACHER
   const toggle = () => {
@@ -167,7 +170,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const ans = await axios.post(
-        "https://updated-3380.onrender.com/studentlogin",
+        "http://localhost:3001/studentlogin",
         { email, password },
         {
           headers: {
@@ -183,17 +186,22 @@ const Login = () => {
         setpassword("");
         console.log(ans.data.message);
         setisauth(true);
+        setisauthenticated(true);
       } else {
         toast.error(ans.data.message);
         setpassword("");
         // setemail("")
         console.log(ans.data.message);
         setisauth(false);
+        setisauthenticated(false);
+
       }
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);
       setisauth(false);
+      setisauthenticated(false);
+
     }
   };
 
@@ -202,7 +210,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const ans = await axios.post(
-        "http://localhost:3000/teacherlogin",
+        "http://localhost:3001/teacherlogin",
         { email, password },
         {
           headers: {
