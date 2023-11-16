@@ -16,10 +16,11 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-<<<<<<< HEAD
+  scroll-behavior: smooth;
+/* <<<<<<< HEAD
 =======
   scroll-behavior: smooth;
->>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd
+>>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd */
 
 }
 
@@ -60,10 +61,6 @@ margin: 2rem auto;
 
 .main {
   width: 100%;
-<<<<<<< HEAD
-
-=======
->>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd
   background-color: white;
 
   /* background-image: url(./Images/Background/stars.jpg);
@@ -121,17 +118,19 @@ margin: 2rem auto;
 
 .headerContainer {
 
-<<<<<<< HEAD
+/* <<<<<<< HEAD
 
 .header {
 
   background-color: #01265B;
-  margin-top: 0rem;
-=======
+  margin-top: 0rem; */
+/* =======
   background-color: #01265B;
->>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd
+>>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd */
   position: relative;
   display: flex;
+  background-color: #01265B;
+  margin-top: 0rem;
   align-items: center;
   justify-content: space-between;
 
@@ -332,11 +331,12 @@ margin: 2rem auto;
 }
 
 .brain {
-<<<<<<< HEAD
+/* <<<<<<< HEAD
   width: 40vw;
 =======
   width: 35vw;
->>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd
+>>>>>>> 84510adbb7cd073619544aaed2011ccaf65a3bdd */
+  width: 40vw;
   position: absolute;
   right: 1vw;
   z-index: 0;
