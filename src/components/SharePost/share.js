@@ -96,7 +96,7 @@ const Share = () => {
 
     // Example of saving data using axios:
     axios
-      .post("http://localhost:3001/api/posts", {
+      .post("http://localhost:3002/api/tutor-posts", {
         title,
         description,
         media,
