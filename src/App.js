@@ -16,6 +16,7 @@ import Register from "./login/pages/Register";
 import Buttons from "./components/buutons";
 import Logout from "./login/pages/logout";
 import { Context } from "./index.js";
+import Share from "./components/SharePost/share.js";
 
 function App() {
   // <<<<<<< HEAD
@@ -32,6 +33,7 @@ function App() {
           <Route path="/page" element={<Page />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/test" element={<Share />} />
         </Routes>
         <Footer />
         <Toaster></Toaster>
