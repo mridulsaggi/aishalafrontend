@@ -5,33 +5,34 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // https://mu
 import PermMediaIcon from "@mui/icons-material/PermMedia";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
+import axios from "axios";
 
 const Share = () => {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
-  const [mediaFile, setMediaFile] = useState([]);
+  const [media, setmedia] = useState([]);
   // const [pollQuestion, setPollQuestion] = useState("");
   const [pollQuestion, setPollQuestion] = useState("");
   const [pollOptions, setPollOptions] = useState(["", ""]);
   const [showPoll, setShowPoll] = useState(false);
 
   const handleMediaChange = (e) => {
-    if (mediaFile === null) {
-      setMediaFile(e.target.files[0]);
+    if (media === null) {
+      setmedia(e.target.files[0]);
     } else {
       const files = Array.from(e.target.files);
-      setMediaFile([...mediaFile, ...files]);
+      setmedia([...media, ...files]);
     }
 
-    // setMediaFile(e.target.files[0]);
+    // setmedia(e.target.files[0]);
   };
 
   const handleRemoveImage = (index) => {
-    setMediaFile((prevMediaFile) => {
-      const updatedMediaFile = [...prevMediaFile];
-      updatedMediaFile.splice(index, 1);
-      console.log(updatedMediaFile); //printing the updated media file two times??
-      return updatedMediaFile;
+    setmedia((prevmedia) => {
+      const updatedmedia = [...prevmedia];
+      updatedmedia.splice(index, 1);
+      console.log(updatedmedia); //printing the updated media file two times??
+      return updatedmedia;
     });
   };
 
@@ -69,6 +70,50 @@ const Share = () => {
     const updatedOptions = [...pollOptions];
     updatedOptions.splice(index, 1);
     setPollOptions(updatedOptions);
+  };
+  const handleShare = (e, req, res) => {
+    e.preventDefault();
+    const { data } = axios.post(
+      "http://localhost:3001/api/posts",
+      {
+        title,
+        description,
+        media,
+        poll: {
+          question: pollQuestion,
+          options: pollOptions,
+        },
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    // Save the details here
+    // You can use the values from the state variables like `title`, `description`, `media`, `pollQuestion`, and `pollOptions` to save the data to your backend or perform any other actions.
+
+    // Example of saving data using axios:
+    axios
+      .post("http://localhost:3001/api/posts", {
+        title,
+        description,
+        media,
+        pollQuestion,
+        pollOptions,
+      })
+      .then((response) => {
+        // Handle success
+        console.log("Data saved successfully:", response.data);
+      })
+      .catch((error) => {
+        // Handle error
+        console.error("Error saving data:", error);
+      });
+
+    // Reset the form or navigate to another page if needed
+    // You can use the `setTitle`, `setDescription`, `setmedia`, `setPollQuestion`, and `setPollOptions` functions to reset the state variables back to their initial values.
   };
 
   return (
@@ -146,8 +191,8 @@ const Share = () => {
               </div>
             )}
             {
-              Array.isArray(mediaFile) &&
-                mediaFile.map((file, index) => (
+              Array.isArray(media) &&
+                media.map((file, index) => (
                   // <img
                   //   key={index}
                   //   className="sharedMedia"
@@ -198,16 +243,16 @@ const Share = () => {
                   </div>
                 ))
 
-              // : mediaFile && (
+              // : media && (
               // <div className="shareMediaContainer">
               //   <img
               //     className="sharedMedia"
-              //     src={URL.createObjectURL(mediaFile)}
+              //     src={URL.createObjectURL(media)}
               //     alt="Selected Media"
               //   />
               //   <button
               //     className="removeButton"
-              //     onClick={() => handleRemoveImage(mediaFile)}
+              //     onClick={() => handleRemoveImage(media)}
               //   >
               //     X
               //   </button>
@@ -261,7 +306,9 @@ const Share = () => {
                 <span className="shareOptText">Photo/video</span>
               </div> */}
             </div>
-            <button className="shareBtn">Share</button>
+            <button className="shareBtn" onClick={handleShare}>
+              Share
+            </button>
           </div>
         </div>
       </div>
