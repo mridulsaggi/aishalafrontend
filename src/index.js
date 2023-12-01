@@ -43,6 +43,7 @@ export const Context = createContext({ isauthenticated: false });
 const Compi = () => {
   const [isauthenticated, setisauthenticated] = useState(false);
   const [loading, setloading] = useState(false);
+  const [tlogin,settlogin]=useState(false);
   const [user, setuser] = useState({});
 
   return (
@@ -54,6 +55,8 @@ const Compi = () => {
         setuser,
         loading,
         setloading,
+        tlogin,
+        settlogin
       }}
     >
       <App />

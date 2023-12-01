@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Card from './Card'
 import Getallposts from './getallpost'
 import toast from 'react-hot-toast'
 import axios from 'axios'
+import Share from '../../SharePost/share'
+import { Context } from '../../../index.js'
 
 const Post = () => {
   const [userid,setuserid]=useState([]);
   const [title,settitle]=useState([]);
   const [media,setmedia]=useState([]);
+  const { isauthenticated, setisauthenticated,tlogin,settlogin} = useContext(Context); //global variables
+
   const submitpost=async(e)=>{
     e.preventDefault();
     try {
@@ -35,8 +39,8 @@ const Post = () => {
   }
   return (
     <div className='main postpage'>
-     <h1>ALL POSTS</h1>
-     <div className="create">
+     {/* <h1>ALL POSTS</h1> */}
+     {/* <div className="create">
       <form method='post' className='form' onSubmit={submitpost}>
         <input type="text" placeholder='userid' name="userid"  value={userid} className='inptitle' onChange={(e) => {
                   setuserid(e.target.value);
@@ -47,10 +51,11 @@ const Post = () => {
         <input type="text" placeholder='media' name="media" value={media} className='inptitle' onChange={(e) => {
                   setmedia(e.target.value);
                 }}/>
-        {/* <input type="text" placeholder='description' name="description" className='inpdesc'/> */}
+         <input type="text" placeholder='description' name="description" className='inpdesc'/> 
         <button>SUBMIT</button>
       </form>
-     </div>
+     </div> */}
+     {tlogin?<Share/>:""}
      <div className="getposts">
       <Getallposts/>
      </div>

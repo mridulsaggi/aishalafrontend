@@ -21,7 +21,7 @@ const Course = () => {
     <div class="sec_link">
       <a href="./Python-for-data-science/index.html">Read more...</a>
     </div>
-    <a href='blank' target="_blank">
+    <a href='/' target="_blank">
       <button class="register">Register Now!</button>
     </a>
     `,
@@ -81,7 +81,7 @@ const Course = () => {
       <li>Opportunity for incubation at IIITD-IC</li>
       <li>Certificate program jointly from AI-Shala and IIITD-IC</li>
     </ol>
-    <a  target="_blank">
+    <a href="/" target="_blank">
       <button class="register">Coming Soon</button>
     </a>
     `,

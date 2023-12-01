@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState ,useContext} from "react";
 import { toast } from "react-hot-toast";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import "../../login/index.css"
 import { Context } from '../../index.js'
 
@@ -374,6 +374,7 @@ const Register = () => {
             )}
             {/* <button className="btn">Login</button> */}
             <button className="btn">Sign up</button>
+            <div>already a user? click to <Link to="/login">LOGIN</Link></div>
           </form>
         </div>
         <div className="right"></div>

@@ -5,6 +5,7 @@ import "../../login/index.css"
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { Context } from '../../index.js'
+import { Link, Navigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 // const Login = () => {
@@ -157,7 +158,7 @@ const Login = () => {
   const [isauth, setisauth] = useState(false);
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
-  const { isauthenticated, setisauthenticated} = useContext(Context); //global variables
+  const { isauthenticated, setisauthenticated,tlogin,settlogin} = useContext(Context); //global variables
 
 
   // TOGGLE FUNCTION FOR CHOOSING BETWEEN LOGIN AS STUDENT AND LOGIN AS TEACHER
@@ -225,19 +226,32 @@ const Login = () => {
         setpassword("");
         console.log(ans.data.message);
         setisauth(true);
+        settlogin(true);
+        setisauthenticated(true);
+
       } else {
         toast.error(ans.data.message);
         setpassword("");
         //   setemail("")
         console.log(ans.data.message);
         setisauth(false);
+        setisauthenticated(false);
+
+        settlogin(false);
       }
     } catch (error) {
       toast.error(error.response.data.message);
       console.log(error);
       setisauth(false);
+        setisauthenticated(false);
+
+      settlogin(false);
     }
   };
+  if (isauthenticated) {
+    console.log(isauth);
+    return <Navigate to={"/page"} />;
+  }
 
   return (
     <>
@@ -283,6 +297,7 @@ const Login = () => {
               />
             </div>
             <button className="btn">Login</button>
+            <div>New user? <Link to="/register">SIGNUP</Link></div>
           </form>
         </div>
         <div className="right"></div>

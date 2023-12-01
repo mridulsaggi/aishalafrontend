@@ -17,6 +17,7 @@ import Buttons from "./components/buutons";
 import Logout from "./login/pages/logout";
 import { Context } from "./index.js";
 import Share from "./components/SharePost/share.js";
+import Course from "./components/Home/courses/Course.js";
 
 function App() {
   // <<<<<<< HEAD
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Super-10" element={<Super10 />} />
           <Route path="/page" element={<Page />} />
+          <Route path="/course" element={<Course />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/test" element={<Share />} />

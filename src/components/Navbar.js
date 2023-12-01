@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <div className="signBtn">
+      {/* <div className="signBtn">
         <Link to="/login">
           <button>Login</button>
         </Link>
-      </div>
+      </div> */}
       <header id="home" className="headerContainer">
         <Link to="/">
           <img
@@ -26,26 +26,26 @@ const Navbar = () => {
             <Link to="/">Home</Link>
           </li>
           <li class="nav_project">
-            <a href="#">Projects</a>
+            <Link to="#">Projects</Link>
             <div class="sub_menu">
               <ul>
                 <li>
                   <Link to="/">Blind Assistance</Link>{" "}
                 </li>
                 <li>
-                  <Link to="#">Object Detection</Link>{" "}
+                  <Link to="/">Object Detection</Link>{" "}
                 </li>
                 <li>
-                  <Link to="#">Pose Detection</Link>{" "}
+                  <Link to="/">Pose Detection</Link>{" "}
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <Link to="../Home/courses/Course.js/#courses">Course</Link>
+            <Link to="/course">Course</Link>
           </li>
           <li>
-            <Link to="#footer">Contact</Link>
+            <Link to="/">Contact</Link>
           </li>
           <li>
             <Link class="nav_super" to="/Super-10">

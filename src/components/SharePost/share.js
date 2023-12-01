@@ -1,10 +1,12 @@
 import "./share.css";
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // https://mui.com/material-ui/material-icons/ installed from this website and used npm install @mui/icons-material @mui/material @emotion/styled @emotion/react command to install this
-import PermMediaIcon from "@mui/icons-material/PermMedia";
-import AddIcon from "@mui/icons-material/Add";
-import DeleteIcon from "@mui/icons-material/Delete";
+// import AccountCircleIcon from "@mui/icons-material/AccountCircle"; // https://mui.com/material-ui/material-icons/ installed from this website and used npm install @mui/icons-material @mui/material @emotion/styled @emotion/react command to install this
+// import PermMediaIcon from "@mui/icons-material/PermMedia";
+// import AddIcon from "@mui/icons-material/Add";
+import { Context } from "../../index.js"
+
+// import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 
 const Share = () => {
@@ -15,6 +17,8 @@ const Share = () => {
   const [pollQuestion, setPollQuestion] = useState("");
   const [pollOptions, setPollOptions] = useState(["", ""]);
   const [showPoll, setShowPoll] = useState(false);
+  const { isauthenticated, setisauthenticated,tlogin,settlogin} = useContext(Context); //global variables
+
 
   const handleMediaChange = (e) => {
     if (media === null) {
@@ -96,7 +100,7 @@ const Share = () => {
 
     // Example of saving data using axios:
     axios
-      .post("http://localhost:3002/api/tutor-posts", {
+      .post("http://localhost:3001/api/tutor-posts", {
         title,
         description,
         media,
@@ -121,11 +125,11 @@ const Share = () => {
       <div className="share">
         <div className="shareWrapper">
           <div className="shareTop">
-            <AccountCircleIcon
+            {/* <AccountCircleIcon
               htmlColor="#01265B"
               fontSize="large"
               className="userPP"
-            />
+            /> */}
             <div className="shareInput">
               <input
                 type="text"
@@ -177,7 +181,7 @@ const Share = () => {
                         className="removeBtn"
                         onClick={() => removePollOption(index)}
                       >
-                        <DeleteIcon />
+                        {/* <DeleteIcon /> */}
                       </button>
                     )}
                   </div>
@@ -265,10 +269,10 @@ const Share = () => {
               <div className="shareOpt">
                 <label htmlFor="media" className="shareOptIcon">
                   <div className="shareOpt">
-                    <PermMediaIcon
+                    {/* <PermMediaIcon
                       htmlColor="#01265B"
                       className="shareOptIcon"
-                    />
+                    /> */}
                     <span className="shareOptText">Media</span>
                   </div>
                 </label>
@@ -283,11 +287,11 @@ const Share = () => {
               </div>
               {/* <Poll /> */}
               <div className="shareOpt">
-                <PermMediaIcon
+                {/* <PermMediaIcon
                   htmlColor="#01265B"
                   className="shareOptIcon"
                   onClick={() => setShowPoll(!showPoll)}
-                />
+                /> */}
                 <span className="shareOptText" onClick={handlePollClick}>
                   Poll
                 </span>

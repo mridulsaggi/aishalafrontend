@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 import { Context } from '../../index.js'
 import axios from 'axios'
 const Logout = () => {
-  const { isauthenticated, setisauthenticated} = useContext(Context); //global variables
+  const { isauthenticated, setisauthenticated,settlogin} = useContext(Context); //global variables
   const logoutevent = async (e) => {
     try {
       const data = await axios.get(`http://localhost:3001/logout`, {
@@ -13,6 +13,7 @@ const Logout = () => {
       })
       toast.success("user loged out")
       setisauthenticated(false);
+      settlogin(false);
   
     } catch (error) {
       setisauthenticated(true);
